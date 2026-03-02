@@ -78,7 +78,7 @@ Atualmente o projeto:
 
 ### 1. Clone o repositório
 
-git clone https://github.com/GabrielPerillo/pipeline-investimentos-alpha-vantage.git
+git clone https://github.com/GabsPerry/pipeline-investimentos-alpha-vantage.git
 
 cd pipeline-investimentos-alpha-vantage
 
