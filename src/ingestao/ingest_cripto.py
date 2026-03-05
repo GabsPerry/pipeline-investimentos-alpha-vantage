@@ -5,9 +5,16 @@ import json                             # trabalhar com Json
 from pathlib import Path                # manipular caminhos de arquivos e pastas 
 from datetime import datetime as dt     # pegar data atual
 import time 
+#from dotenv import load_dotenv
+#import os 
 
 # Criando campos chave 
 
+# Importando variáveis de ambiente do arquivo .env 
+#load_dotenv()
+
+# Sua API Key
+#apiKey = os.getenv("ALPHA_VANTAGE_KEY")
 apiKey = 'J8M9P0B2JCPHH1PM'
 
 # sourceCurrency
@@ -27,6 +34,7 @@ for srcCur in cryptos:
 
     # Fazendo requisição da API 
     url = f'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={srcCur}&to_currency={convCur}&apikey={apiKey}'
+    
     response = requests.get(url)
 
     #print(response)
@@ -39,10 +47,14 @@ for srcCur in cryptos:
     # currentDate
     curDate = dt.today().strftime('%Y-%m-%d')
 
-    output_dir = Path(repository) / srcCur 
-    output_dir.mkdir(parents=True, exist_ok=True)
+    #output_dir = Path(repository) / srcCur 
+    #output_dir.mkdir(parents=True, exist_ok=True)
 
-    file = output_dir / f"{srcCur}_{curDate}.json" 
+    #output_dir = os.getenv("VOLUME_DBX")
+    output_dir = '/Volumes/workspace/default/lago_do_mago/raw_data'
+
+    #file = output_dir / f"{srcCur}_{curDate}.json" 
+    file = Path(f"{output_dir}/{srcCur}_{curDate}.json")
 
     with file.open("w") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
@@ -51,5 +63,5 @@ for srcCur in cryptos:
 
     time.sleep(12)
 
-#print(file.resolve())
+print('Extração de hoje finalizada...')
 #print(data)
