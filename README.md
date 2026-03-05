@@ -1,4 +1,4 @@
-<img width="1587" height="617" alt="image" src="https://github.com/user-attachments/assets/7a3c2235-5658-4df0-af63-b6de78630a2e" /># Pipeline de Investimentos – Alpha Vantage
+Investimentos – Alpha Vantage
 
 Projeto pessoal de engenharia de dados para estudo e prática de ingestão, armazenamento, transformação e análise de dados financeiros.  
 A aplicação consome dados da **Alpha Vantage**, salva localmente em um *data lake* estruturado e futuramente será integrada ao **Databricks**, Airflow e CI/CD.
@@ -11,6 +11,7 @@ O diagrama abaixo representa a arquitetura completa (presente + futura) do pipel
 
 > **API → Python → Data Lake RAW → Bronze → Silver → Gold → Dashboards / Análises**
 
+Job no Databricks:
 <img width="1587" height="617" alt="image" src="https://github.com/user-attachments/assets/9c4a8b11-05d1-4948-951a-50fea2b659c5" />
 
 
