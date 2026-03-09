@@ -12,7 +12,7 @@ O diagrama abaixo representa a arquitetura completa (presente + futura) do pipel
 > **API → Python → Data Lake RAW → Bronze → Silver → Gold → Dashboards / Análises**
 
 Job no Databricks:
-<img width="1604" height="516" alt="image" src="https://github.com/user-attachments/assets/ecdbec55-fc39-4e3e-abfb-1571d36e0062" />
+<img width="1604" height="516" alt="image" src="https://github.com/user-attachments/assets/376f4283-28d5-4aa6-9180-1712775eef5a" />
 
 ---
 
