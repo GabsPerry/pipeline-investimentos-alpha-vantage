@@ -1,11 +1,11 @@
-Investimentos – Alpha Vantage
+## Investimentos – Alpha Vantage
 
 Projeto pessoal de engenharia de dados para estudo e prática de ingestão, armazenamento, transformação e análise de dados financeiros.  
 A aplicação consome dados da **Alpha Vantage**, salva localmente em um *data lake* estruturado e futuramente será integrada ao **Databricks**, Airflow e CI/CD.
 
 ---
 
-## 📊 Arquitetura do Projeto
+## Arquitetura do Projeto
 
 O diagrama abaixo representa a arquitetura completa (presente + futura) do pipeline, incluindo ingestão, armazenamento e transformação:
 
@@ -16,7 +16,7 @@ Job no Databricks:
 
 ---
 
-## 🧠 Objetivo do Projeto
+## Objetivo do Projeto
 
 Criar um pipeline realista de engenharia de dados que:
 
@@ -30,7 +30,7 @@ Este projeto serve tanto para **aprendizado** quanto para **portfólio profissio
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 pipeline-investimentos-alpha-vantage/
@@ -50,7 +50,7 @@ pipeline-investimentos-alpha-vantage/
 
 ---
 
-## 🔌 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Python**
 - **Requests** (requisições HTTP)
@@ -64,7 +64,7 @@ pipeline-investimentos-alpha-vantage/
 
 ---
 
-## 🚀 Funcionalidade Atual
+## Funcionalidade Atual
 
 Atualmente o projeto:
 
@@ -77,7 +77,7 @@ Atualmente o projeto:
 
 ---
 
-## ▶️ Como Rodar o Projeto
+## Como Rodar o Projeto
 
 ### 1. Clone o repositório
 
@@ -99,12 +99,12 @@ python src/ingestao/ingest_crypto.py
 
 --- 
 
-## 📌 Sobre o Autor
+## Sobre o Autor
 
 Projeto desenvolvido por Gabriel Perillo, engenheiro de dados aprendendo arquitetura moderna, pipelines eficientes e boas práticas de software para construir soluções reais de dados.
 
 --- 
 
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença MIT.
