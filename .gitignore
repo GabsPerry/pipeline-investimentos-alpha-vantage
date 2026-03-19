@@ -212,3 +212,6 @@ data_lake/
 
 # Chave da API 
 alpha_vantage_apiKey.txt
+
+# Arquivo com dados sensíveis (Secrets não é permitido na free edition)
+config.py

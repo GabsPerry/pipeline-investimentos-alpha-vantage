@@ -5,17 +5,13 @@ import json                             # trabalhar com Json
 from pathlib import Path                # manipular caminhos de arquivos e pastas 
 from datetime import datetime as dt     # pegar data atual
 import time 
-#from dotenv import load_dotenv
-#import os 
+from config import API_KEY, VOLUME_PATH
 
 # Criando campos chave 
 
-# Importando variáveis de ambiente do arquivo .env 
-#load_dotenv()
-
-# Sua API Key
-#apiKey = os.getenv("ALPHA_VANTAGE_KEY")
-apiKey = 'J8M9P0B2JCPHH1PM'
+# Sua API Key (estou buscando do meu arquivo config.py)
+apiKey = API_KEY
+output_dir = VOLUME_PATH
 
 # sourceCurrency
 #srcCur = 'BTC'               # Moeda/Cripto origem que vou extrair os dados 
@@ -38,7 +34,6 @@ for srcCur in cryptos:
     response = requests.get(url)
 
     #print(response)
-
     data = response.json()
 
 
@@ -47,11 +42,8 @@ for srcCur in cryptos:
     # currentDate
     curDate = dt.today().strftime('%Y-%m-%d')
 
-    #output_dir = Path(repository) / srcCur 
-    #output_dir.mkdir(parents=True, exist_ok=True)
-
-    #output_dir = os.getenv("VOLUME_DBX")
-    output_dir = '/Volumes/workspace/default/lago_do_mago/raw_data'
+    #output_dir = '/Volumes/workspace/default/lago_do_mago/raw_data'
+    #'J8M9P0B2JCPHH1PM'
 
     #file = output_dir / f"{srcCur}_{curDate}.json" 
     file = Path(f"{output_dir}/{srcCur}_{curDate}.json")
@@ -63,5 +55,5 @@ for srcCur in cryptos:
 
     time.sleep(12)
 
-print('Extração de hoje finalizada...')
+print('Extração finalizada...')
 #print(data)
