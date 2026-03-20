@@ -28,16 +28,36 @@ df_gold = df_gold.withColumn('price_rank', rank().over(w_rank_price))\
 
 df_gold.createOrReplaceTempView('temp_vw_df_gold')
 
-#spark.sql = ("""
-#    MERGE INTO gold.crypto_metrics as A
-#    USING temp_vw_df_gold as B 
-#        ON A.crypto_code = B.crypto_code 
-#        AND A.converted_code = B.converted_code 
-#        AND A.last_refreshed_date = B.last_refreshed_date 
-#    UPDATE SET 
-#        
-#""")
- 
+spark.sql("""
+  MERGE INTO gold.crypto_metrics as A
+    USING temp_vw_df_gold as B 
+        ON A.crypto_code = B.crypto_code 
+        AND A.converted_code = B.converted_code 
+        AND A.last_refreshed_date = B.last_refreshed_date 
+    WHEN MATCHED THEN 
+    UPDATE SET 
+        A.crypto_name = B.crypto_name 
+        , A.converted_name = B.converted_name 
+        , A.exchange_rate = B.exchange_rate 
+        , A.time_zone = B.time_zone 
+        , A.bid_price = B.bid_price
+        , A.ask_price = B.ask_price 
+        , A.upload_date = B.upload_date 
+        , A.updated_date = current_timestamp() 
+        , A.spread = B.spread 
+        , A.spread_pct = B.spread_pct
+        , A.price_today = b.price_today 
+        , A.price_yesterday = b.price_yesterday 
+        , A.perc_change = b.perc_change 
+        , A.priority = b.priority 
+        , A.price_rank = b.price_rank 
+        , A.best_spread_rank = b.best_spread_rank 
+        , A.best_spread_pct_rank = b.best_spread_pct_rank 
+    WHEN NOT MATCHED 
+    THEN INSERT *
+
+""")
+
 print("Merge Gold executado com sucesso \n")
 
 metrics = spark.sql("""
