@@ -190,7 +190,7 @@ Este projeto foi construído para consolidar conhecimentos práticos em:
 - Arquitetura Lakehouse
 - PySpark
 - Delta Lake
-- Modelagem em camadas
+- Modelagem da arquitetura medalhão
 - Data Quality
 - Logging
 - ETL / ELT
