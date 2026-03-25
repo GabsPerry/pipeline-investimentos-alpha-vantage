@@ -1,6 +1,7 @@
 # Crypto Lakehouse Pipeline with Databricks
 
 ![Status](https://img.shields.io/badge/Status-Finalizado-success)
+![GitHub last commit](https://img.shields.io/github/last-commit/GabsPerry/pipeline-investimentos-alpha-vantage)  
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![PySpark](https://img.shields.io/badge/PySpark-Data%20Processing-orange?logo=apachespark)
