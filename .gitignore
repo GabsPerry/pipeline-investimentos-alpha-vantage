@@ -210,8 +210,14 @@ __marimo__/
 # Data lake local
 data_lake/
 
+# Notebooks pySpark
+Notebooks_Databricks/
+
 # Chave da API 
 alpha_vantage_apiKey.txt
+
+# arquivos de exemplo api alpha vantage
+apiFiles/
 
 # Arquivo com dados sensíveis (Secrets não é permitido na free edition)
 config.py
