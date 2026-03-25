@@ -84,6 +84,7 @@ crypto-lakehouse-pipeline/
 │       └── logger.py
 │
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
