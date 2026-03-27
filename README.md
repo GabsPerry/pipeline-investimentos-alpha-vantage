@@ -9,7 +9,7 @@
 ![Delta Lake](https://img.shields.io/badge/Delta%20Lake-Storage-0A66C2)
 ![SQL](https://img.shields.io/badge/SQL-Analytics-lightgrey?logo=postgresql)
 
-Pipeline completo de Engenharia de Dados para ingestão, transformação, qualidade e análise de dados de criptomoedas utilizando **Python, PySpark, Delta Lake e Databricks Free Edition**.
+Pipeline completo de Engenharia de Dados para ingestão, transformação, qualidade e análise de dados de criptomoedas utilizando **Python, PySpark, Delta Lake e Databricks (Free Edition)**.
 
 Este projeto implementa uma arquitetura **Lakehouse**, seguindo a arquitetura **medalhão** (**Bronze / Silver / Gold**) consumindo dados da API da **Alpha Vantage**, salvando arquivos JSON no **Databricks Volume**, processando tudo em **PySpark**, gerando métricas analíticas e exibindo os resultados em um **dashboard no Databricks**.
 
