@@ -143,15 +143,34 @@ Execução automatizada das etapas:
 
 ## Data Quality Checks
 
-O pipeline inclui validações para garantir integridade dos dados.
+Para aumentar a confiabilidade e simular um pipeline de dados mais próximo de um ambiente de produção, este projeto inclui validações de Data Quality tanto na camada Silver quanto na camada Gold.
+O objetivo dessas verificações é garantir que os dados transformados permaneçam consistentes, válidos e confiáveis antes de serem consumidos pela camada analítica final.
 
-Exemplos de checks:
-- exchange_rate precisa ser positivo 
-- crypto_code não pode ser nulo
-- spread não pode ser negativo
-- perc_change não pode ser nulo (quando aplicável)
+## Como o Data Quality funciona
 
-Essas validações foram implementadas em módulos dedicados de data quality para as camadas Silver e Gold.
+A lógica de Data Quality foi implementada por meio de funções de validação executadas durante o processo de transformação.
+Essas verificações são acionadas automaticamente durante a execução das camadas Silver e Gold, antes que os dados finais sejam persistidos.
+
+Se alguma validação falhar, o pipeline pode:
+- Registrar o problema para fins de observabilidade
+- Impedir que dados inválidos avancem para a próxima etapa
+- Gerar um erro para interromper o job (dependendo da severidade da validação)
+
+Isso ajuda a garantir que apenas dados limpos e prontos para análise cheguem à camada final consumida pelo dashboard.
+
+## Exemplos atuais de validação
+
+Validações da camada Silver: 
+- Campos obrigatórios não podem ser nulos
+- Campos numéricos devem ser convertidos corretamente
+- Registros duplicados devem ser removidos
+- Campos de data devem seguir o formato esperado
+
+Validações da camada Gold: 
+- Métricas agregadas não podem ser nulas
+- Métricas de negócio devem seguir a lógica esperada
+- Tabelas de saída devem conter registros válidos
+- O dataset analítico final deve estar pronto para consumo no dashboard
 
 ---
 
