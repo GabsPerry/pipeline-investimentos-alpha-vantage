@@ -64,7 +64,7 @@ crypto-lakehouse-pipeline/
 │   │
 │   ├── transformations/
 │   │   ├── bronze.py
-│   │   └── ingest_crypto.py
+│   │   └── silver.py
 │   │   └── gold.py
 │   │
 │   ├── data_quality/
