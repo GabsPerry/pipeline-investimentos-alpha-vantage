@@ -32,7 +32,7 @@ Construir um pipeline ponta a ponta de dados para praticar conceitos reais de En
 
 ## Arquitetura do projeto
 
-<img width="1206" height="859" alt="image" src="https://github.com/user-attachments/assets/f2597d15-10cd-4612-bdb7-89065a0951f7" />
+<img width="1213" height="864" alt="image" src="https://github.com/user-attachments/assets/9923344d-de33-4a1e-be74-163159ccd61c" />
 
 ---
 
