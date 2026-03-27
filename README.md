@@ -59,7 +59,7 @@ crypto-lakehouse-pipeline/
 │
 ├── src/
 │   ├── ingestion/
-│   │   ├── config.py
+│   │   ├── config.py   # secrets
 │   │   └── ingest_crypto.py
 │   │
 │   ├── transformations/
