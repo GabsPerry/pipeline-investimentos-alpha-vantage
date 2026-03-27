@@ -32,16 +32,7 @@ Construir um pipeline ponta a ponta de dados para praticar conceitos reais de En
 
 ## Arquitetura do projeto
 
-```mermaid
-flowchart TD
-    A[Alpha Vantage API] --> B[Python Ingestion]
-    B --> C[Databricks Volume / Raw JSON]
-    C --> D[Bronze Layer]
-    D --> E[Silver Layer]
-    E --> F[Gold Layer]
-    F --> G[Databricks Dashboard]
-    F --> H[Databricks Job / Workflow]
-```
+<img width="1206" height="859" alt="image" src="https://github.com/user-attachments/assets/f2597d15-10cd-4612-bdb7-89065a0951f7" />
 
 ---
 
