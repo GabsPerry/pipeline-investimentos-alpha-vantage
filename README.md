@@ -146,7 +146,7 @@ Execução automatizada das etapas:
 Para aumentar a confiabilidade e simular um pipeline de dados mais próximo de um ambiente de produção, este projeto inclui validações de Data Quality tanto na camada Silver quanto na camada Gold.
 O objetivo dessas verificações é garantir que os dados transformados permaneçam consistentes, válidos e confiáveis antes de serem consumidos pela camada analítica final.
 
-## Como o Data Quality funciona
+### Como o Data Quality funciona
 
 A lógica de Data Quality foi implementada por meio de funções de validação executadas durante o processo de transformação.
 Essas verificações são acionadas automaticamente durante a execução das camadas Silver e Gold, antes que os dados finais sejam persistidos.
@@ -158,7 +158,7 @@ Se alguma validação falhar, o pipeline pode:
 
 Isso ajuda a garantir que apenas dados limpos e prontos para análise cheguem à camada final consumida pelo dashboard.
 
-## Exemplos atuais de validação
+### Exemplos atuais de validação
 
 Validações da camada Silver: 
 - Campos obrigatórios não podem ser nulos
