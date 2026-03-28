@@ -34,6 +34,7 @@ Construir um pipeline end-to-end de dados para praticar conceitos de Engenharia 
 
 <img width="1033" height="655" alt="image" src="https://github.com/user-attachments/assets/13388dde-3a37-41f4-adc3-33ef9f216aae" />
 
+
 ---
 
 ## Tecnologias utilizadas
@@ -101,17 +102,20 @@ Extração diária de múltiplas criptomoedas:
 Salvamento dos dados em formato JSON no Databricks Volume
 
 ### 2. Bronze Layer
+
 - Leitura dos arquivos RAW
 - Padronização inicial
 - Armazenamento da camada bruta em tabela Delta
 
 ### 3. Silver Layer
+
 - Tratamento e tipagem de colunas
 - Deduplicação dos dados
 - Aplicação de regras de negócio
 - MERGE incremental em Delta
 
 ### 4. Gold Layer
+
 Criação de métricas analíticas, como:
 - price_today
 - price_yesterday
@@ -121,6 +125,7 @@ Criação de métricas analíticas, como:
 - price_rank
 
 ### 5. Dashboard
+
 Visualizações construídas diretamente no Databricks SQL
 
 Análise de:
@@ -159,11 +164,13 @@ Para organizar melhor o fluxo dos dados, este projeto segue a arquitetura **Meda
 Essa separação ajuda a manter os dados mais organizados, facilita o tratamento das informações e deixa o processo mais confiável ao longo das etapas.
 
 ### Bronze
+
 Aqui ficam os **dados brutos** vindos diretamente da API, praticamente da forma como foram coletados.
 
 Essa camada é importante para manter o histórico original dos dados e servir como base para as próximas transformações.
 
 ### Silver
+
 Nesta etapa, os dados passam por **tratamentos e padronizações**.
 
 É aqui que acontecem processos como:
