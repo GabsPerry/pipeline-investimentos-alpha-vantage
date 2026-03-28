@@ -172,15 +172,21 @@ Isso ajuda a garantir que apenas dados limpos e prontos para análise cheguem à
 
 Validações da camada Silver: 
 - Campos obrigatórios não podem ser nulos
-- Campos numéricos devem ser convertidos corretamente
+- Valor da conversão (exchange_rate) não pode ser negativo
 - Registros duplicados devem ser removidos
-- Campos de data devem seguir o formato esperado
+- Campos numéricos devem ser convertidos corretamente 
+
+Exemplo:
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/afc8ccfb-3858-474d-93b6-ae126293b649" />
 
 Validações da camada Gold: 
 - Métricas agregadas não podem ser nulas
-- Métricas de negócio devem seguir a lógica esperada
-- Tabelas de saída devem conter registros válidos
 - O dataset analítico final deve estar pronto para consumo no dashboard
+- O spread não pode ser negativo, pois o preço de venda no mercado não deveria ser menor que o preço de compra 
+
+Exemplo:
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/7b19830e-3293-4d7e-8701-371476d54f9f" />
+
 
 ### Testes de falha e comportamento do pipeline
 
