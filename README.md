@@ -81,7 +81,7 @@ crypto-lakehouse-pipeline/
 
 ---
 
-## Fluxo do pipeline
+## Fluxo da pipeline
 
 ### 1. Ingestão
 Consumo da API Alpha Vantage
@@ -148,6 +148,35 @@ Quando a execução termina com sucesso:
 Isso adiciona uma camada básica de automação e feedback operacional ao projeto, tornando o fluxo mais próximo do que é visto em pipelines reais de dados.
 
 <img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
+
+---
+
+## Arquitetura Medalhão
+
+Para organizar melhor o fluxo dos dados, este projeto segue a arquitetura **Medalhão**, dividindo o pipeline em três camadas principais: **Bronze, Silver e Gold**.
+
+Essa separação ajuda a manter os dados mais organizados, facilita o tratamento das informações e deixa o processo mais confiável ao longo das etapas.
+
+### Bronze
+Aqui ficam os **dados brutos** vindos diretamente da API, praticamente da forma como foram coletados.
+
+Essa camada é importante para manter o histórico original dos dados e servir como base para as próximas transformações.
+
+### Silver
+Nesta etapa, os dados passam por **tratamentos e padronizações**.
+
+É aqui que acontecem processos como:
+- Ajuste para converter os tipos de dados
+- Limpeza de colunas
+- Remoção de duplicidades
+- Aplicação de regras de qualidade
+
+O objetivo dessa camada é garantir que os dados estejam **consistentes, confiáveis e bem estruturados**.
+
+### Gold
+Na camada Gold, os dados já estão **limpos e estruturados**, e passam a ser **transformados em métricas e indicadores analíticos**, prontos para serem consumidos em análises, métricas e dashboards.
+
+É a camada mais próxima da visão de negócio, onde a informação já começa a fazer mais sentido para interpretação e tomada de decisão.
 
 ---
 
