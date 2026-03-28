@@ -177,6 +177,7 @@ Validações da camada Silver:
 - Campos numéricos devem ser convertidos corretamente 
 
 Exemplo:
+
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/afc8ccfb-3858-474d-93b6-ae126293b649" />
 
 Validações da camada Gold: 
@@ -185,6 +186,7 @@ Validações da camada Gold:
 - O spread não pode ser negativo, pois o preço de venda no mercado não deveria ser menor que o preço de compra 
 
 Exemplo:
+
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/7b19830e-3293-4d7e-8701-371476d54f9f" />
 
 
