@@ -139,7 +139,7 @@ Quando a execução termina com sucesso:
 - O **Dashboard do Databricks** é atualizado automaticamente  
 - Um e-mail é enviado confirmando que o pipeline rodou corretamente  
 
-Isso adiciona uma camada básica de automação e feedback operacional ao projeto, tornando o fluxo mais próximo do que é visto em pipelines reais de dados.
+Dessa forma adicionado uma camada de automação e feedback operacional ao projeto, tornando o fluxo mais próximo de um pipeline de produção real.
 
 <img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
 
