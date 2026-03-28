@@ -202,7 +202,7 @@ Durante esses testes, o pipeline foi validado para:
 - Interromper a execução quando necessário
 - Registrar mensagens de erro nos logs
 - Impedir que dados problemáticos avançassem para as próximas camadas
-- Impedir que o dashboard seja atualizado com dados inconsistentes, inválidos ou incompletos
+- Garantir que o dashboard só seja atualizado com dados válidos e prontos para análise
 
 Esse tipo de validação ajuda a aumentar a confiabilidade do projeto e demonstra como o pipeline se comporta em cenários de falha, algo muito importante em ambientes reais de dados.
 
