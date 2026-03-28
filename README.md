@@ -149,6 +149,7 @@ Isso adiciona uma camada básica de automação e feedback operacional ao projet
 
 <img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
 
+
 ---
 
 ## Arquitetura Medalhão
@@ -177,6 +178,32 @@ O objetivo dessa camada é garantir que os dados estejam **consistentes, confiá
 Na camada Gold, os dados já estão **limpos e estruturados**, e passam a ser **transformados em métricas e indicadores analíticos**, prontos para serem consumidos em análises, métricas e dashboards.
 
 É a camada mais próxima da visão de negócio, onde a informação já começa a fazer mais sentido para interpretação e tomada de decisão.
+
+---
+
+## Dicionários dos dados
+
+Aqui vou descrever as principais colunas utilizadas ao longo das camadas Bronze, Silver e Gold do pipeline.
+
+### Colunas Principais
+
+| Coluna | Descrição |
+|---|---|
+| `crypto_code` | Código/símbolo da criptomoeda (ex: `BTC`, `ETH`, `SOL`). |
+| `converted_code` | Moeda de conversão utilizada como referência (ex: `USD`). |
+| `exchange_rate` | Valor de conversão de 1 unidade da criptomoeda para a moeda de destino no momento da coleta dos dados. |
+| `bid_price` | Preço de compra do mercado, representando quanto o mercado está disposto a pagar pela criptomoeda. |
+| `ask_price` | Preço de venda do mercado, representando quanto o mercado está cobrando pela criptomoeda. |
+| `spread` | Diferença entre `ask_price` e `bid_price`, utilizada como indicador de liquidez e custo de transação. |
+| `perc_change` | Variação percentual do preço da criptomoeda em relação ao valor de referência fornecido pela API. |
+| `last_refreshed_date` | Data de referência da cotação retornada pela API. |
+| `upload_date` | Data/hora em que o dado foi ingerido no Data Lake / Databricks. |
+
+### Interpretação de Negócio
+
+- **`exchange_rate`** é a principal métrica do dataset, representando o preço atual da criptomoeda.
+- **`perc_change`** indica se o ativo valorizou ou desvalorizou em termos percentuais.
+- **`spread`** representa a diferença entre preço de compra e venda, sendo um indicador importante de liquidez e custo de negociação.
 
 ---
 
