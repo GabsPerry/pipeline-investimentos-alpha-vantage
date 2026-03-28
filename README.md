@@ -274,20 +274,6 @@ Exemplos de eventos monitorados:
 
 ---
 
-## Métricas criadas na camada Gold
-
-Algumas métricas analíticas implementadas:
-- Preço atual
-- Preço do dia anterior
-- Variação percentual diária
-- Spread absoluto
-- Spread percentual
-- Ranking por preço
-
-Essas métricas foram usadas para alimentar o dashboard.
-
----
-
 ## Visualização dos Dados
 
 Como etapa final do pipeline, os dados tratados e agregados na camada **Gold** foram utilizados para construir um dashboard analítico diretamente no **Databricks SQL**.
