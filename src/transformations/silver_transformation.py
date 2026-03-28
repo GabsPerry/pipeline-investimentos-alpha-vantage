@@ -13,7 +13,7 @@ try:
         .withColumn('last_refreshed_date', substring(col('last_refreshed_date'),1,10).cast(DateType()))\
         .withColumn('exchange_rate', col('exchange_rate').cast(DoubleType()))\
         .withColumn('bid_price', col('bid_price').cast(DoubleType()))\
-        .withColumn('ask_price', col('ask_price').cast(DoubleType()))
+        .withColumn('ask_price', col('ask_price').cast(DoubleType())).filter(col('crypto_code').isNotNull())
 
     dedup = Window.partitionBy('crypto_code','converted_code','last_refreshed_date').orderBy(desc('upload_date'))
 
@@ -62,7 +62,6 @@ try:
     print("\nResultado do MERGE:") 
     print(f"Linhas inseridas: {metrics.get('numTargetRowsInserted', 0)}") 
     print(f"Linhas atualizadas: {metrics.get('numTargetRowsUpdated', 0)}") 
-    #print(f"Linhas deletadas: {metrics.get('numTargetRowsDeleted', 0)}") 
 
 except Exception as e:
     logger.exception(f'Erro ao transformar a tabela silver: {e}')
