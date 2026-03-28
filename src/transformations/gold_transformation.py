@@ -38,7 +38,6 @@ try:
 
     df_check = spark.table('temp_vw_df_gold') 
     gold_validation(df_check) 
-    #df.filter(col('perc_change').isNull()).limit(5).display()
 
     logger.info('Checagem OK!! Nenhum problema encontrado.')
     logger.info('Iniciando merge com a gold...')
