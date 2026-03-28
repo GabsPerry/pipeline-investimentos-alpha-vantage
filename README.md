@@ -284,4 +284,35 @@ Algumas métricas analíticas implementadas:
 - Spread percentual
 - Ranking por preço
 
-Essas métricas foram usadas para alimentar o dashboard analítico.
+Essas métricas foram usadas para alimentar o dashboard.
+
+---
+
+## Visualização dos Dados
+
+Como etapa final do pipeline, os dados tratados e agregados na camada **Gold** foram utilizados para construir um dashboard analítico diretamente no **Databricks SQL**.
+
+A ideia dessa etapa foi transformar os dados processados em uma visualização simples e prática, permitindo analisar o comportamento das criptomoedas monitoradas ao longo do tempo.
+
+Apesar do foco principal deste projeto estar na construção do pipeline de dados, optei por incluir também uma camada de visualização para representar de forma prática o valor final dos dados processados.
+
+### Principais análises disponíveis no dashboard
+
+- Ranking das criptomoedas por preço atual
+- Variação diária percentual por ativo
+- Spread absoluto e spread percentual
+- Comparação entre preço relativo e spread de mercado
+- Tabela analítica consolidada para consulta final
+
+
+Nesta primeira visão, é possível acompanhar os principais indicadores analíticos do projeto, incluindo o ranking das criptomoedas por preço atual, a variação diária percentual e filtros para análise por período e por ativo.
+
+<img width="1354" height="830" alt="image" src="https://github.com/user-attachments/assets/e21ddfed-bfd1-4bcb-b204-924129328e71" />
+
+
+Nesta segunda parte do dashboard, estão disponíveis visualizações relacionadas ao **spread percentual**, comparação entre **preço relativo e spread de mercado**, além de uma tabela analítica consolidada com as principais métricas calculadas na camada Gold.
+
+<img width="1626" height="895" alt="image" src="https://github.com/user-attachments/assets/2889dad1-2da1-4253-b8d3-f34de612a5e6" />
+
+
+Esse dashboard foi construído como uma camada final de consumo analítico, permitindo visualizar de forma mais intuitiva os dados processados ao longo do pipeline.
