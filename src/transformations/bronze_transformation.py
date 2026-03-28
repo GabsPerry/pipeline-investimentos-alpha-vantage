@@ -1,5 +1,4 @@
 # Importando bibliotecas PySpark 
-
 from pyspark.sql.functions import * 
 from pyspark.sql.types import * 
 from pyspark.sql.window import *
@@ -18,14 +17,15 @@ try:
     .withColumnRenamed('3. To_Currency Code','converted_code').withColumnRenamed('4. To_Currency Name','converted_name')\
     .withColumnRenamed('5. Exchange Rate','exchange_rate').withColumnRenamed('6. Last Refreshed','last_refreshed_date')\
     .withColumnRenamed('7. Time Zone','time_zone').withColumnRenamed('8. Bid Price','bid_price').withColumnRenamed('9. Ask Price','ask_price')\
-    .withColumn('upload_date',current_timestamp()).filter(col('crypto_code').isNotNull())
+    .withColumn('upload_date',current_timestamp())
+    #.filter(col('crypto_code').isNotNull())
 
 except Exception as e:
     logger.exception(f'Falha inesperada: {e}')
     raise
 
 df.write.format('delta')\
-    .mode('append')\
+    .mode('overwrite')\
     .saveAsTable('bronze.crypto_exchange')
 
 logger.info('Tabela bronze.crypto_exchange atualizada com sucesso!!')
