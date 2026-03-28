@@ -32,7 +32,7 @@ Construir um pipeline end-to-end de dados para praticar conceitos de Engenharia 
 
 ## Arquitetura do projeto
 
-<img width="1033" height="655" alt="image" src="https://github.com/user-attachments/assets/a12a1638-8191-4d39-bd4c-4156d42de44d" />
+<img width="1033" height="655" alt="image" src="https://github.com/user-attachments/assets/13388dde-3a37-41f4-adc3-33ef9f216aae" />
 
 ---
 
