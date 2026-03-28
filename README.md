@@ -285,19 +285,3 @@ Algumas métricas analíticas implementadas:
 - Ranking por preço
 
 Essas métricas foram usadas para alimentar o dashboard analítico.
-
----
-
-## Principais aprendizados
-
-Este projeto foi construído para consolidar conhecimentos práticos em:
-- Engenharia de Dados
-- Arquitetura Lakehouse
-- PySpark
-- Delta Lake
-- Modelagem da arquitetura medalhão
-- Data Quality
-- Logging
-- ETL / ELT
-- Databricks Workflows
-- Dashboards analíticos
