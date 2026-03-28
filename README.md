@@ -129,17 +129,7 @@ Análise de:
 - Spread percentual
 - Comparação financeira das criptomoedas
 
-### 6. Orquestração
-Criação de Job ETL no Databricks
-
-Execução automatizada das etapas:
-- Ingestão
-- Bronze
-- Silver
-- Gold
-- Atualização do Dashboard
-
-### Orquestração e Automação
+### 6. Orquestração e Automação
 
 O pipeline é executado automaticamente por meio de um **Job do Databricks**, simulando um fluxo mais próximo de um ambiente de produção real de engenharia de dados.
 
@@ -157,8 +147,7 @@ Quando a execução termina com sucesso:
 
 Isso adiciona uma camada básica de automação e feedback operacional ao projeto, tornando o fluxo mais próximo do que é visto em pipelines reais de dados.
 
-<img width="1080" height="584" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
-
+<img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
 
 ---
 
