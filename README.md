@@ -182,6 +182,22 @@ Validações da camada Gold:
 - Tabelas de saída devem conter registros válidos
 - O dataset analítico final deve estar pronto para consumo no dashboard
 
+### Testes de falha e comportamento do pipeline
+
+Para validar se as regras de Data Quality estavam funcionando corretamente, também foram realizados testes forçando erros de propósito nas camadas **Silver** e **Gold**.
+
+A ideia desses testes foi simular cenários reais em que dados inválidos ou inconsistentes poderiam entrar no pipeline, garantindo que o processo reagisse da forma esperada.
+
+Durante esses testes, o pipeline foi validado para:
+- Identificar registros inválidos
+- Interromper a execução quando necessário
+- Registrar mensagens de erro nos logs
+- Impedir que dados problemáticos avançassem para as próximas camadas
+
+Esse tipo de validação ajuda a aumentar a confiabilidade do projeto e demonstra como o pipeline se comporta em cenários de falha, algo muito importante em ambientes reais de dados.
+
+
+
 ---
 
 ## Logging
