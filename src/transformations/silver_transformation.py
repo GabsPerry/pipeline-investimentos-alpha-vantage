@@ -62,7 +62,6 @@ try:
     print("\nResultado do MERGE:") 
     print(f"Linhas inseridas: {metrics.get('numTargetRowsInserted', 0)}") 
     print(f"Linhas atualizadas: {metrics.get('numTargetRowsUpdated', 0)}") 
-    #print(f"Linhas deletadas: {metrics.get('numTargetRowsDeleted', 0)}") 
 
 except Exception as e:
     logger.exception(f'Erro ao transformar a tabela silver: {e}')

@@ -1,6 +1,7 @@
 from pyspark.sql import functions as F
 
 def gold_validation(df):
+    
     if df.count() == 0:
         raise Exception('Data Quality Error: Gold truncada')
 

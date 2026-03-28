@@ -4,6 +4,7 @@ from pyspark.sql.window import *
 from pyspark.sql.types import *
 
 def silver_checks(df):
+    
     double_cols = ['exchange_rate','bid_price','ask_price']
 
     dedup = Window.partitionBy('crypto_code', 'converted_code','last_refreshed_date').orderBy(F.desc('upload_date'))
