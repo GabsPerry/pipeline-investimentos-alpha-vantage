@@ -180,6 +180,7 @@ Exemplo:
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/afc8ccfb-3858-474d-93b6-ae126293b649" />
 
+
 Validações da camada Gold: 
 - Métricas agregadas não podem ser nulas
 - O dataset analítico final deve estar pronto para consumo no dashboard
@@ -201,10 +202,9 @@ Durante esses testes, o pipeline foi validado para:
 - Interromper a execução quando necessário
 - Registrar mensagens de erro nos logs
 - Impedir que dados problemáticos avançassem para as próximas camadas
+- Impedir que o dashboard seja atualizado com dados inconsistentes, inválidos ou incompletos
 
 Esse tipo de validação ajuda a aumentar a confiabilidade do projeto e demonstra como o pipeline se comporta em cenários de falha, algo muito importante em ambientes reais de dados.
-
-
 
 ---
 
