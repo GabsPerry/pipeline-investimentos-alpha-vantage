@@ -13,7 +13,7 @@ try:
         .withColumn('last_refreshed_date', substring(col('last_refreshed_date'),1,10).cast(DateType()))\
         .withColumn('exchange_rate', col('exchange_rate').cast(DoubleType()))\
         .withColumn('bid_price', col('bid_price').cast(DoubleType()))\
-        .withColumn('ask_price', col('ask_price').cast(DoubleType()))
+        .withColumn('ask_price', col('ask_price').cast(DoubleType())).filter(col('crypto_code').isNotNull())
 
     dedup = Window.partitionBy('crypto_code','converted_code','last_refreshed_date').orderBy(desc('upload_date'))
 

@@ -1,107 +1,198 @@
-# Pipeline de Investimentos – Alpha Vantage
+# Crypto Lakehouse Pipeline with Databricks
 
-Projeto pessoal de engenharia de dados para estudo e prática de ingestão, armazenamento, transformação e análise de dados financeiros.  
-A aplicação consome dados da **Alpha Vantage**, salva localmente em um *data lake* estruturado e futuramente será integrada ao **Databricks**, Airflow e CI/CD.
+Pipeline completo de Engenharia de Dados para ingestão, transformação, qualidade e análise de dados de criptomoedas utilizando **Python, PySpark, Delta Lake e Databricks**.
 
----
-
-## 📊 Arquitetura do Projeto
-
-O diagrama abaixo representa a arquitetura completa (presente + futura) do pipeline, incluindo ingestão, armazenamento e transformação:
-
-> **API → Python → Data Lake RAW → Bronze → Silver → Gold → Dashboards / Análises**
+Este projeto implementa uma arquitetura **Lakehouse** em camadas (**Bronze / Silver / Gold**) consumindo dados da API da **Alpha Vantage**, salvando arquivos JSON no **Databricks Volume**, processando tudo em **PySpark**, gerando métricas analíticas e exibindo os resultados em um **dashboard no Databricks**.
 
 ---
 
-## 🧠 Objetivo do Projeto
+## Objetivo do projeto
 
-Criar um pipeline realista de engenharia de dados que:
+Construir um pipeline ponta a ponta de dados para praticar conceitos reais de Engenharia de Dados, incluindo:
 
-- Conecta em APIs de dados financeiros (cripto, ações, câmbio)
-- Extrai e armazena dados brutos no *data lake local*
-- Constrói camadas Bronze, Silver e Gold no Databricks
-- Evolui para ter Airflow e CI/CD futuramente
-- Aplica boas práticas reais de engenharia: versionamento, modularização, logs, estrutura de pastas e ambientes
-
-Este projeto serve tanto para **aprendizado** quanto para **portfólio profissional**.
+- Ingestão de dados via API
+- Armazenamento em data lake
+- Modelagem em camadas
+- Transformações em PySpark
+- Data Quality Checks
+- Logging estruturado
+- Dashboard analítico
+- Orquestração via Job ETL
 
 ---
 
-## 📁 Estrutura do Projeto
+## Arquitetura do projeto
+
+```mermaid
+flowchart TD
+    A[Alpha Vantage API] --> B[Python Ingestion]
+    B --> C[Databricks Volume / Raw JSON]
+    C --> D[Bronze Layer]
+    D --> E[Silver Layer]
+    E --> F[Gold Layer]
+    F --> G[Databricks Dashboard]
+    F --> H[Databricks Job / Workflow]
+```
+
+---
+
+## Tecnologias utilizadas
+
+- Python
+- PySpark
+- Spark SQL
+- Databricks
+- Delta Lake
+- REST API
+- JSON
+- Databricks Volumes
+- Databricks Jobs
+- Databricks SQL Dashboard
+- Git / GitHub
+
+---
+
+## Estrutura do projeto
 
 ```
-pipeline-investimentos-alpha-vantage/
+crypto-lakehouse-pipeline/
 │
 ├── src/
-│ └── ingestao/
-│ └── ingest_crypto.py # Script atual de ingestão (versão simples)
-│
-├── data_lake/
-│ ├── raw/ # Dados brutos extraídos da API
-│ ├── silver/ # (futuro) Dados limpos e normalizados
-│ └── gold/ # (futuro) Dados prontos para análise
+│   ├── ingestion/
+│   │   ├── config.py
+│   │   └── ingest_crypto.py
+│   │
+│   ├── transformations/
+│   │   ├── bronze.py
+│   │   └── ingest_crypto.py
+│   │   └── gold.py
+│   │
+│   ├── data_quality/
+│   │   ├── silver_checks.py
+│   │   └── gold_checks.py
+│   │
+│   └── utils/
+│       └── logger.py
 │
 ├── .gitignore
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## 🔌 Tecnologias Utilizadas
+## Fluxo do pipeline
 
-- **Python**
-- **Requests** (requisições HTTP)
-- **JSON** (armazenamento bruto)
-- **Pathlib** (manipulação de arquivos e diretórios)
-- **Datetime** (timestamp dos arquivos)
-- **Git/GitHub** (versionamento e PRs)
-- **Databricks Community Edition** *(update futuro – Bronze/Silver/Gold)*
-- **Apache Spark / PySpark** *(update futuro)*
-- **Airflow** *(update futuro)*
+### 1. Ingestão
+Consumo da API Alpha Vantage
+
+Extração diária de múltiplas criptomoedas:
+- BTC
+- ETH
+- SOL
+- ADA
+- XRP
+- BNB
+- DOT
+- DOGE
+- TRX
+- LTC
+
+Salvamento dos dados em formato JSON no Databricks Volume
+
+### 2. Bronze Layer
+- Leitura dos arquivos RAW
+- Padronização inicial
+- Armazenamento da camada bruta em tabela Delta
+
+### 3. Silver Layer
+- Tratamento e tipagem de colunas
+- Deduplicação dos dados
+- Aplicação de regras de negócio
+- MERGE incremental em Delta
+
+### 4. Gold Layer
+Criação de métricas analíticas, como:
+- price_today
+- price_yesterday
+- perc_change
+- spread
+- spread_pct
+- price_rank
+
+### 5. Dashboard
+Visualizações construídas diretamente no Databricks SQL
+
+Análise de:
+- Ranking por preço
+- Variação diária
+- Spread percentual
+- Comparação financeira das criptomoedas
+
+### 6. Orquestração
+Criação de Job ETL no Databricks
+
+Execução automatizada das etapas:
+- Ingestão
+- Bronze
+- Silver
+- Gold
+- Atualização do Dashboard
 
 ---
 
-## 🚀 Funcionalidade Atual
+## Data Quality Checks
 
-Atualmente o projeto:
+O pipeline inclui validações para garantir integridade dos dados.
 
-1. Conecta na API da Alpha Vantage  
-2. Extrai o câmbio de criptomoeda → USD  
-3. Gera um arquivo JSON contendo a resposta  
-4. Salva no caminho: data_lake/raw/<CRIPTO>/<AAAA-MM-DD>.json
-5. Mantém histórico de execuções diárias
-  Exemplo real: data_lake/raw/BTC/2024-02-29.json
+Exemplos de checks:
+- exchange_rate precisa ser positivo 
+- crypto_code não pode ser nulo
+- spread não pode ser negativo
+- perc_change não pode ser nulo (quando aplicável)
+
+Essas validações foram implementadas em módulos dedicados de data quality para as camadas Silver e Gold.
 
 ---
 
-## ▶️ Como Rodar o Projeto
+## Logging
 
-### 1. Clone o repositório
+O projeto também conta com logging estruturado para rastrear a execução do pipeline.
 
-git clone https://github.com/GabsPerry/pipeline-investimentos-alpha-vantage.git
+Exemplos de eventos monitorados:
+- Início e fim da ingestão
+- Criptomoeda em processamento
+- Arquivos salvos
+- Início/fim das transformações Bronze / Silver / Gold
+- Falhas de qualidade de dados
+- Erros de API
 
-cd pipeline-investimentos-alpha-vantage
+---
 
-### 2. Instale as dependências
+## Métricas criadas na camada Gold
 
-pip install -r requirements.txt
+Algumas métricas analíticas implementadas:
+- Preço atual
+- Preço do dia anterior
+- Variação percentual diária
+- Spread absoluto
+- Spread percentual
+- Ranking por preço
 
-### 3. Adicione sua API key no script
+Essas métricas foram usadas para alimentar o dashboard analítico.
 
-Você pode obter uma chave gratuita em:
-https://www.alphavantage.co/support/#api-key
+---
 
-### 4. Execute o script de ingestão
-python src/ingestao/ingest_crypto.py
+## Principais aprendizados
 
---- 
-
-## 📌 Sobre o Autor
-
-Projeto desenvolvido por Gabriel Perillo, engenheiro de dados aprendendo arquitetura moderna, pipelines eficientes e boas práticas de software para construir soluções reais de dados.
-
---- 
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.
+Este projeto foi construído para consolidar conhecimentos práticos em:
+- Engenharia de Dados
+- Arquitetura Lakehouse
+- PySpark
+- Delta Lake
+- Modelagem da arquitetura medalhão
+- Data Quality
+- Logging
+- ETL / ELT
+- Databricks Workflows
+- Dashboards analíticos
