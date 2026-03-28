@@ -1,4 +1,4 @@
-# Crypto Lakehouse Pipeline with Databricks
+# Crypto Lakehouse Pipeline com Databricks (Free Edition)
 
 ![Status](https://img.shields.io/badge/Status-Finalizado-success)
 ![GitHub last commit](https://img.shields.io/github/last-commit/GabsPerry/pipeline-investimentos-alpha-vantage)
@@ -9,7 +9,7 @@
 ![Delta Lake](https://img.shields.io/badge/Delta%20Lake-Storage-0A66C2)
 ![SQL](https://img.shields.io/badge/SQL-Analytics-lightgrey?logo=postgresql)
 
-Pipeline completo de Engenharia de Dados para ingestão, transformação, qualidade e análise de dados de criptomoedas utilizando **Python, PySpark, Delta Lake e Databricks (Free Edition)**.
+Pipeline completo de Engenharia de Dados para ingestão, transformação, qualidade e análise de dados de criptomoedas utilizando **Python, PySpark, Delta Lake e Databricks**.
 
 Este projeto implementa uma arquitetura **Lakehouse**, seguindo a arquitetura **medalhão** (**Bronze / Silver / Gold**) consumindo dados da API da **Alpha Vantage**, salvando arquivos JSON no **Databricks Volume**, processando tudo em **PySpark**, gerando métricas analíticas e exibindo os resultados em um **dashboard no Databricks**.
 
@@ -59,7 +59,7 @@ crypto-lakehouse-pipeline/
 │
 ├── src/
 │   ├── ingestion/
-│   │   ├── config.py   #secrets
+│   │   ├── config.py   #secrets (privado)
 │   │   └── ingest_crypto.py
 │   │
 │   ├── transformations/
@@ -138,6 +138,27 @@ Execução automatizada das etapas:
 - Silver
 - Gold
 - Atualização do Dashboard
+
+### Orquestração e Automação
+
+O pipeline é executado automaticamente por meio de um **Job do Databricks**, simulando um fluxo mais próximo de um ambiente de produção real de engenharia de dados.
+
+Durante a execução, o job percorre todas as etapas do pipeline:
+- Ingestão
+- Bronze
+- Silver
+- Gold
+- Atualização do Dashboard
+
+Quando a execução termina com sucesso:
+- A camada **Gold** é atualizada  
+- O **Dashboard do Databricks** é atualizado automaticamente  
+- Um e-mail é enviado confirmando que o pipeline rodou corretamente  
+
+Isso adiciona uma camada básica de automação e feedback operacional ao projeto, tornando o fluxo mais próximo do que é visto em pipelines reais de dados.
+
+<img width="1080" height="584" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
+
 
 ---
 
