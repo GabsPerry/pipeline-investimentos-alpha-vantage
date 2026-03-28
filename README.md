@@ -103,32 +103,21 @@ Salvamento dos dados em formato JSON no Databricks Volume
 
 ### 2. Bronze Layer
 
-- Leitura dos arquivos RAW
-- Padronização inicial
-- Armazenamento da camada bruta em tabela Delta
+Persistência dos dados brutos em tabela Delta.
 
 ### 3. Silver Layer
 
-- Tratamento e tipagem de colunas
-- Deduplicação dos dados
-- Aplicação de regras de negócio
-- MERGE incremental em Delta
+Aplicação de transformações, padronizações, deduplicação e validações de qualidade.
 
 ### 4. Gold Layer
 
-Criação de métricas analíticas, como:
-- price_today
-- price_yesterday
-- perc_change
-- spread
-- spread_pct
-- price_rank
+Criação de métricas analíticas para consumo no dashboard.
 
 ### 5. Dashboard
 
-Visualizações construídas diretamente no Databricks SQL
+Visualizações construídas diretamente no Databricks SQL para análise dos indicadores.
 
-Análise de:
+Análises como:
 - Ranking por preço
 - Variação diária
 - Spread percentual
