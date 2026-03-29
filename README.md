@@ -141,7 +141,7 @@ Quando a execução termina com sucesso:
 
 Dessa forma adicionado uma camada de automação e feedback operacional ao projeto, tornando o fluxo mais próximo de um pipeline de produção real.
 
-<img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/bc685e7f-df74-4dc1-9974-1198cf1e005d" />
+<img width="640" height="720" alt="image" src="https://github.com/user-attachments/assets/8f53df32-c840-4465-ace4-cd789f79a96f" />
 
 
 ---
