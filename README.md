@@ -228,20 +228,10 @@ Validações da camada Silver:
 - Registros duplicados devem ser removidos
 - Campos numéricos devem ser convertidos corretamente 
 
-Exemplo:
-
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/afc8ccfb-3858-474d-93b6-ae126293b649" />
-
-
 Validações da camada Gold: 
 - Métricas agregadas não podem ser nulas
 - O dataset analítico final deve estar pronto para consumo no dashboard
 - O spread não pode ser negativo, pois o preço de venda no mercado não deveria ser menor que o preço de compra 
-
-Exemplo:
-
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/7b19830e-3293-4d7e-8701-371476d54f9f" />
-
 
 ### Testes de falha e comportamento do pipeline
 
@@ -256,7 +246,17 @@ Durante esses testes, o pipeline foi validado para:
 - Impedir que dados problemáticos avançassem para as próximas camadas
 - Garantir que o dashboard só seja atualizado com dados válidos e prontos para análise
 
-Esse tipo de validação ajuda a aumentar a confiabilidade do projeto e demonstra como o pipeline se comporta em cenários de falha, algo muito importante em ambientes reais de dados.
+Exemplo da camada Silver:
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/afc8ccfb-3858-474d-93b6-ae126293b649" />
+
+
+Exemplo da Gold:
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/7b19830e-3293-4d7e-8701-371476d54f9f" />
+
+
+Esse tipo de validação ajuda a aumentar a confiabilidade do projeto e demonstra como o pipeline se comporta em cenários de falha.
 
 ---
 
