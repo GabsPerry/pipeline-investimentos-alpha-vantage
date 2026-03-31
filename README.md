@@ -17,7 +17,7 @@ Este projeto implementa uma arquitetura **Lakehouse**, seguindo a arquitetura **
 
 ## Objetivo do projeto
 
-Construir um pipeline end-to-end de dados para praticar conceitos de Engenharia de Dados, incluindo:
+Construir um pipeline end-to-end de dados para praticar conceitos de Engenharia de Dados dentro do Databricks, incluindo:
 
 - Ingestão de dados via API
 - Armazenamento em data lake
