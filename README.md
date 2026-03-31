@@ -305,4 +305,4 @@ Nesta segunda parte do dashboard, estão disponíveis visualizações relacionad
 
 
 
-Esse dashboard foi construído como uma camada final de consumo analítico, permitindo visualizar de forma mais intuitiva os dados processados ao longo do pipeline.
+Esse dashboard foi construído para ajudar a visualizar de forma mais intuitiva os dados processados ao longo do pipeline.
